@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finance management system</title>
+      
+        <!--
+          - custom css link
+        -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/media_queries.css">
+        <link rel="stylesheet" href="./assets/css/animation.css">
+      
+        <!--
+          - google font link
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800;900&family=Roboto:wght@400;500&display=swap"
+          rel="stylesheet">
+    </head>
+<body>
+<table>
+<tr>
+<td> <input type="text" name="a" id="first" placeholder="Enter principal"/> </td>
+</tr>
+<tr>
+<td> <input type="text" name="b" id="second" placeholder="Enter time period "/> </td>
+</tr>
+<tr>
+<td> <input type="text" name="c" id="third" placeholder="Enter rate of interest(%)"/> </td>
+</tr>
+<tr>
+<td> <button onclick = "simple_interest()" >Submit</button> </td>
+</tr>
+</table>
+<div id="num"> </div>
+<div id="num1"></div>
+</body>
+
+<script type="text/javascript">
+function simple_interest()
+{
+var p,t,r,si,ci;
+p = document.getElementById ("first").value;
+t = document.getElementById ("second").value;
+r = document.getElementById ("third").value;
+si = parseInt((p*t*r)/100 );
+amount = p*Math.pow((1 +r/100),t );
+ci = amount-p;
+document.getElementById ('num').innerHTML ="Simple interest : "+si;
+document.getElementById ('num1').innerHTML ="Compound interest : "+ci;
+}
+</script>
+</html>
